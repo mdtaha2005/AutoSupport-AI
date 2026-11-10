@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AutoSupport AI - Ticket Management & Intelligent Routing</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Chart.js CDN for Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-800 flex flex-col">
+
+  <!-- Top Navigation Bar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo & Brand -->
+      <div class="flex items-center space-x-3 cursor-pointer" onclick="switchTab('tickets')">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xl shadow-md">
+          ⚡
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-lg text-slate-900 tracking-tight">AutoSupport AI</span>
+            <span class="bg-blue-100 text-blue-700 text-xs px-2 py-0.5 rounded-full font-medium">v1.0 Ready</span>
+          </div>
+          <p class="text-xs text-slate-500">Intelligent NLP Routing, Hybrid Search & Analytics</p>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="hidden md:flex items-center space-x-1">
+        <button id="nav-tickets" onclick="switchTab('tickets')" class="px-3 py-2 rounded-lg text-sm font-medium transition text-blue-600 bg-blue-50 hover:bg-blue-100">
+          📋 Tickets & Search
+        </button>
+        <button id="nav-create" onclick="switchTab('create')" class="px-3 py-2 rounded-lg text-sm font-medium transition text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          ➕ New Ticket / NLP Live
+        </button>
+        <button id="nav-agents" onclick="switchTab('agents')" class="px-3 py-2 rounded-lg text-sm font-medium transition text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          👥 Agents & Teams
+        </button>
+        <button id="nav-analytics" onclick="switchTab('analytics')" class="px-3 py-2 rounded-lg text-sm font-medium transition text-slate-600 hover:text-slate-900 hover:bg-slate-100">
+          📊 Analytics
+        </button>
+        <button id="nav-health" onclick="switchTab('health')" class="px-3 py-2 rounded-lg text-sm font-medium transition text-slate-600 hover:text-slate-900 hover:bg-slate-100 flex items-center space-x-1.5">
+          <span id="nav-health-dot" class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Health</span>
+        </button>
+      </nav>
+
+      <!-- User Session & Links -->
+      <div class="flex items-center space-x-3">
+        <a href="/api-docs" target="_blank" class="hidden sm:inline-flex items-center text-xs text-slate-500 hover:text-blue-600 font-medium px-2.5 py-1.5 rounded-lg border border-slate-200 hover:border-blue-300">
+          <span>Swagger Docs</span>
+          <svg class="w-3.5 h-3.5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+        </a>
+
+        <!-- Current User Display -->
+        <div id="user-pill" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-full px-3 py-1 cursor-pointer transition" onclick="openLoginModal()">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span id="user-name" class="text-xs font-semibold text-slate-700">Checking...</span>
+          <span id="user-role" class="text-[10px] bg-slate-200 text-slate-600 px-1.5 py-0.5 rounded-full uppercase">...</span>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col space-y-2 max-w-sm pointer-events-none"></div>
+
+  <!-- Main Content Body -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+
+    <!-- ========================================== -->
+    <!-- TAB 1: TICKETS EXPLORER & HYBRID SEARCH    -->
+    <!-- ========================================== -->
+    <section id="tab-tickets" class="space-y-6">
+
+      <!-- Search & Retrieval Bar -->
+      <div class="bg-white p-4 rounded-xl border border-slate-200 card-shadow space-y-3">
+        <div class="flex flex-col md:flex-row gap-3">
+          
+          <!-- Search Input -->
+          <div class="relative flex-1">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+            </div>
+            <input type="text" id="search-query-input" placeholder="Search ticket titles, customer messages, order IDs, comments..." 
+              class="w-full pl-10 pr-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+              onkeydown="if(event.key === 'Enter') executeSearch()">
+          </div>
+
+          <!-- Retrieval Mode Selector -->
+          <div class="flex items-center space-x-2">
+            <label class="text-xs font-medium text-slate-500 whitespace-nowrap hidden sm:inline">Engine:</label>
+            <select id="search-mode-select" class="px-3 py-2.5 rounded-lg border border-slate-300 text-xs font-semibold bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="hybrid">⚡ Hybrid (Lexical + Vector)</option>
+              <option value="lexical">📝 Lexical FTS (Title/Desc/Comments)</option>
+              <option value="semantic">🧠 Semantic Vector (pgvector)</option>
+            </select>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center space-x-2">
+            <button onclick="executeSearch()" class="px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition shadow-sm flex items-center space-x-1.5">
+              <span>Search</span>
+            </button>
+            <button onclick="resetFiltersAndSearch()" class="px-3.5 py-2.5 border border-slate-300 hover:bg-slate-100 text-slate-600 rounded-lg text-sm font-medium transition" title="Clear Filters">
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Filters Bar -->
+        <div id="active-filters-bar" class="flex flex-wrap items-center gap-2 pt-1 border-t border-slate-100 hidden">
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Active Filters:</span>
+          <div id="active-filters-chips" class="flex flex-wrap items-center gap-1.5"></div>
+          <button onclick="resetFiltersAndSearch()" class="text-xs text-rose-600 hover:underline font-medium ml-2">Clear All</button>
+        </div>
+      </div>
+
+      <!-- Main Layout: Dynamic Facets Sidebar + Ticket Results -->
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        
+        <!-- Left Column: Dynamic Faceted Filters -->
+        <aside class="lg:col-span-1 space-y-4">
+          <div class="bg-white p-4 rounded-xl border border-slate-200 card-shadow space-y-5">
+            <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+              <h3 class="font-bold text-sm text-slate-900 uppercase tracking-wide">Faceted Filters</h3>
+              <span id="total-matching-count" class="text-xs bg-slate-100 text-slate-600 font-semibold px-2 py-0.5 rounded-full">0 tickets</span>
+            </div>
+
+            <!-- Category Facet -->
+            <div class="space-y-2">
+              <h4 class="text-xs font-semibold text-slate-500 uppercase">Category</h4>
+              <div id="facet-category-list" class="space-y-1 max-h-40 overflow-y-auto text-xs">
+                <span class="text-slate-400 italic">Loading facets...</span>
+              </div>
+            </div>
+
+            <!-- Priority Facet -->
+            <div class="space-y-2 pt-2 border-t border-slate-100">
+              <h4 class="text-xs font-semibold text-slate-500 uppercase">Priority</h4>
+              <div id="facet-priority-list" class="space-y-1 text-xs"></div>
+            </div>
+
+            <!-- Status Facet -->
+            <div class="space-y-2 pt-2 border-t border-slate-100">
+              <h4 class="text-xs font-semibold text-slate-500 uppercase">Status</h4>
+              <div id="facet-status-list" class="space-y-1 text-xs"></div>
+            </div>
+
+            <!-- Sentiment Facet -->
+            <div class="space-y-2 pt-2 border-t border-slate-100">
+              <h4 class="text-xs font-semibold text-slate-500 uppercase">Sentiment</h4>
+              <div id="facet-sentiment-list" class="space-y-1 text-xs"></div>
+            </div>
+
+          </div>
+        </aside>
+
+        <!-- Right Column: Tickets Table / Card Stream -->
+        <div class="lg:col-span-3 space-y-4">
+          
+          <!-- Results Header & Pagination Summary -->
+          <div class="flex items-center justify-between text-xs text-slate-500">
+            <span id="search-results-summary">Showing tickets</span>
+            <div class="flex items-center space-x-2">
+              <label for="sort-select">Sort by:</label>
+              <select id="sort-select" onchange="executeSearch()" class="px-2 py-1 rounded border border-slate-300 text-xs bg-white text-slate-700">
+                <option value="createdAt:desc">Newest First</option>
+                <option value="createdAt:asc">Oldest First</option>
+                <option value="priority:desc">Priority (High to Low)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Ticket Items List -->
+          <div id="tickets-list-container" class="space-y-3">
+            <div class="text-center py-16 bg-white rounded-xl border border-slate-200">
+              <p class="text-slate-500">Loading tickets...</p>
+            </div>
+          </div>
+
+          <!-- Pagination Bar -->
+          <div id="pagination-controls" class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200 card-shadow text-xs">
+            <button id="btn-prev-page" onclick="prevPage()" class="px-3 py-1.5 border border-slate-300 rounded-lg hover:bg-slate-50 font-medium disabled:opacity-40" disabled>
+              Previous
+            </button>
+            <span id="page-indicator" class="font-semibold text-slate-700">Page 1 of 1</span>
+            <button id="btn-next-page" onclick="nextPage()" class="px-3 py-1.5 border border-slate-300 rounded-lg hover:bg-slate-50 font-medium disabled:opacity-40" disabled>
+              Next
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 2: NEW TICKET & LIVE NLP TESTER       -->
+    <!-- ========================================== -->
+    <section id="tab-create" class="max-w-4xl mx-auto space-y-6 hidden">
+      
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-6">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Create Ticket & Live NLP Evaluation</h2>
+          <p class="text-sm text-slate-500 mt-1">
+            Test automated classification, intent detection, entity extraction, and sentiment scoring before or during submission.
+          </p>
+        </div>
+
+        <!-- Quick Sample Scenario Fillers -->
+        <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 space-y-2">
+          <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Quick Fill Test Cases:</span>
+          <div class="flex flex-wrap gap-2">
+            <button onclick="fillTestCase('payment')" class="text-xs bg-white hover:bg-blue-50 text-blue-700 border border-slate-200 hover:border-blue-300 px-2.5 py-1 rounded-lg font-medium transition">
+              💳 Payment Failure
+            </button>
+            <button onclick="fillTestCase('refund')" class="text-xs bg-white hover:bg-pink-50 text-pink-700 border border-slate-200 hover:border-pink-300 px-2.5 py-1 rounded-lg font-medium transition">
+              💸 Refund Request
+            </button>
+            <button onclick="fillTestCase('technical')" class="text-xs bg-white hover:bg-cyan-50 text-cyan-700 border border-slate-200 hover:border-cyan-300 px-2.5 py-1 rounded-lg font-medium transition">
+              🐞 API Timeout (Tech)
+            </button>
+            <button onclick="fillTestCase('delivery')" class="text-xs bg-white hover:bg-amber-50 text-amber-700 border border-slate-200 hover:border-amber-300 px-2.5 py-1 rounded-lg font-medium transition">
+              📦 Tracking Delay
+            </button>
+          </div>
+        </div>
+
+        <!-- Ticket Form -->
+        <form id="create-ticket-form" onsubmit="event.preventDefault(); submitCreateTicket();" class="space-y-4">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Customer Name *</label>
+              <input type="text" id="create-cust-name" required value="Jane Miller" class="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Customer Email *</label>
+              <input type="email" id="create-cust-email" required value="jane.miller@company.org" class="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Ticket Title *</label>
+            <input type="text" id="create-title" required placeholder="Brief summary of the issue" class="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500 font-medium">
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Customer Message / Description *</label>
+            <textarea id="create-desc" required rows="4" placeholder="Enter full customer message with details, order numbers, transaction dates..." class="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Initial Priority Override (Optional)</label>
+              <select id="create-priority" class="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Let NLP Predict Priority (Recommended)</option>
+                <option value="LOW">LOW</option>
+                <option value="MEDIUM">MEDIUM</option>
+                <option value="HIGH">HIGH</option>
+                <option value="URGENT">URGENT</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Department Routing</label>
+              <select id="create-dept" class="w-full px-3.5 py-2 text-sm rounded-lg border border-slate-300 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Auto-Route by NLP Category & Intent (Default)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex items-center space-x-3 pt-2">
+            <button type="button" onclick="previewNlpLive()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-lg text-sm font-semibold transition flex items-center space-x-1.5 border border-slate-300">
+              <span>🧪 Preview NLP Live</span>
+            </button>
+            <button type="submit" id="btn-submit-ticket" class="flex-1 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-semibold transition shadow flex items-center justify-center space-x-2">
+              <span>🚀 Submit & Route Ticket</span>
+            </button>
+          </div>
+
+        </form>
+
+        <!-- NLP Live Preview Panel -->
+        <div id="nlp-preview-card" class="hidden p-5 rounded-xl border border-indigo-200 bg-indigo-50/50 space-y-4">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <span class="text-xs font-bold text-indigo-900 uppercase tracking-wider flex items-center space-x-1.5">
+              <span>🧠 Python NLP Microservice Analysis</span>
+            </span>
+            <span id="nlp-preview-time" class="text-[11px] text-indigo-600">Calculated</span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+            <div class="bg-white p-3 rounded-lg border border-indigo-100">
+              <span class="text-slate-500 block mb-0.5">Category</span>
+              <span id="nlp-preview-category" class="font-bold text-blue-700 text-sm">--</span>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-indigo-100">
+              <span class="text-slate-500 block mb-0.5">Detected Intent</span>
+              <span id="nlp-preview-intent" class="font-bold text-slate-800 text-sm">--</span>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-indigo-100">
+              <span class="text-slate-500 block mb-0.5">Confidence</span>
+              <span id="nlp-preview-confidence" class="font-bold text-emerald-700 text-sm">--%</span>
+            </div>
+            <div class="bg-white p-3 rounded-lg border border-indigo-100">
+              <span class="text-slate-500 block mb-0.5">Predicted Priority</span>
+              <span id="nlp-preview-priority" class="font-bold text-amber-700 text-sm">--</span>
+            </div>
+          </div>
+
+          <!-- Sentiment & Human Review -->
+          <div class="flex items-center justify-between bg-white p-3 rounded-lg border border-indigo-100 text-xs">
+            <div class="flex items-center space-x-2">
+              <span class="text-slate-500">Sentiment:</span>
+              <span id="nlp-preview-sentiment" class="font-semibold text-slate-800">--</span>
+            </div>
+            <div id="nlp-preview-review-flag" class="hidden text-amber-700 bg-amber-50 px-2 py-0.5 rounded font-medium border border-amber-200">
+              ⚠️ Flagged for Human Review
+            </div>
+          </div>
+
+          <!-- Extracted Entities -->
+          <div>
+            <span class="text-xs font-semibold text-indigo-900 block mb-1">Extracted Entities (spaCy & Custom Rules):</span>
+            <div id="nlp-preview-entities" class="flex flex-wrap gap-1.5 text-xs">
+              <span class="text-slate-400 italic">No specific entities detected</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 3: AGENTS & WORKLOAD BALANCING         -->
+    <!-- ========================================== -->
+    <section id="tab-agents" class="space-y-6 hidden">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Agents & Workload Balancing</h2>
+          <p class="text-sm text-slate-500 mt-0.5">
+            Phase 3 multi-factor routing monitors agent skills, real-time availability, and capacity constraints.
+          </p>
+        </div>
+        <div class="flex items-center space-x-2 self-start">
+          <button onclick="openAddMemberModal()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold shadow-sm flex items-center space-x-1.5 transition">
+            <span>➕ Add Team Member</span>
+          </button>
+          <button onclick="loadAgents()" class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold shadow-sm flex items-center space-x-1.5">
+            <span>🔄 Refresh Agents</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Agents Grid -->
+      <div id="agents-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="col-span-full text-center py-12 text-slate-400">Loading agents...</div>
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 4: OPERATIONAL ANALYTICS DASHBOARD     -->
+    <!-- ========================================== -->
+    <section id="tab-analytics" class="space-y-6 hidden">
+      
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Support Operations Analytics</h2>
+          <p class="text-sm text-slate-500 mt-0.5">
+            Operational KPIs, Mean Time To Resolution (MTTR), and capacity utilization.
+          </p>
+        </div>
+        <button onclick="loadAnalytics()" class="px-3 py-1.5 bg-white border border-slate-300 hover:bg-slate-50 text-slate-700 rounded-lg text-xs font-semibold shadow-sm flex items-center space-x-1.5">
+          <span>🔄 Refresh Metrics</span>
+        </button>
+      </div>
+
+      <!-- 4 Top KPI Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500 uppercase">Total Tickets</span>
+            <span class="text-xl">🎫</span>
+          </div>
+          <div id="stat-total-tickets" class="text-2xl font-black text-slate-900 mt-2">--</div>
+          <span class="text-[11px] text-slate-400">Indexed in database</span>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500 uppercase">Resolution Rate</span>
+            <span class="text-xl">✅</span>
+          </div>
+          <div id="stat-resolution-rate" class="text-2xl font-black text-emerald-600 mt-2">--%</div>
+          <span class="text-[11px] text-slate-400">Resolved / Closed ratio</span>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500 uppercase">Average MTTR</span>
+            <span class="text-xl">⏱️</span>
+          </div>
+          <div id="stat-mttr" class="text-2xl font-black text-blue-600 mt-2">--h</div>
+          <span class="text-[11px] text-slate-400">Mean time to resolution</span>
+        </div>
+
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500 uppercase">Escalation Rate</span>
+            <span class="text-xl">🚨</span>
+          </div>
+          <div id="stat-escalations" class="text-2xl font-black text-amber-600 mt-2">--%</div>
+          <span class="text-[11px] text-slate-400">Reassigned or SLA escalated</span>
+        </div>
+
+      </div>
+
+      <!-- Charts Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        
+        <!-- Chart 1: Ticket Volume Over Time -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow space-y-3">
+          <h3 class="font-bold text-sm text-slate-900">Ticket Volume History</h3>
+          <div class="relative h-64">
+            <canvas id="chart-volume"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 2: Category Distribution -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow space-y-3">
+          <h3 class="font-bold text-sm text-slate-900">NLP Category Breakdown</h3>
+          <div class="relative h-64 flex items-center justify-center">
+            <canvas id="chart-categories"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 3: Ticket Status Split -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow space-y-3">
+          <h3 class="font-bold text-sm text-slate-900">Current Status Distribution</h3>
+          <div class="relative h-64">
+            <canvas id="chart-status"></canvas>
+          </div>
+        </div>
+
+        <!-- Chart 4: Agent Capacity Utilization -->
+        <div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow space-y-3">
+          <h3 class="font-bold text-sm text-slate-900">Agent Workload & Capacity</h3>
+          <div class="relative h-64">
+            <canvas id="chart-workload"></canvas>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ========================================== -->
+    <!-- TAB 5: SYSTEM HEALTH & DEPENDENCIES        -->
+    <!-- ========================================== -->
+    <section id="tab-health" class="max-w-3xl mx-auto space-y-6 hidden">
+      
+      <div class="bg-white p-6 rounded-2xl border border-slate-200 card-shadow space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-slate-900">System Health & Microservice Status</h2>
+            <p class="text-sm text-slate-500 mt-0.5">Real-time health verification across all backend dependencies.</p>
+          </div>
+          <button onclick="checkHealth()" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-xs font-semibold transition">
+            Ping Now
+          </button>
+        </div>
+
+        <div id="health-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <!-- Database -->
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-xs text-slate-500 uppercase">PostgreSQL + Prisma</span>
+              <span id="health-db-badge" class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <div id="health-db-status" class="font-bold text-slate-800">Checking...</div>
+          </div>
+
+          <!-- Redis / BullMQ -->
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-xs text-slate-500 uppercase">Redis & BullMQ Queues</span>
+              <span id="health-redis-badge" class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <div id="health-redis-status" class="font-bold text-slate-800">Checking...</div>
+          </div>
+
+          <!-- Python NLP Microservice -->
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-xs text-slate-500 uppercase">Python FastAPI NLP Service</span>
+              <span id="health-nlp-badge" class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <div id="health-nlp-status" class="font-bold text-slate-800">Checking...</div>
+          </div>
+
+          <!-- pgvector Engine -->
+          <div class="p-4 rounded-xl border border-slate-200 bg-slate-50 space-y-1">
+            <div class="flex items-center justify-between">
+              <span class="font-semibold text-xs text-slate-500 uppercase">pgvector HNSW Vector Engine</span>
+              <span id="health-vector-badge" class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+            </div>
+            <div id="health-vector-status" class="font-bold text-slate-800">Checking...</div>
+          </div>
+        </div>
+
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-500">
+          <span id="health-uptime">Uptime: --</span>
+          <span id="health-last-checked">Checked: Just now</span>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ========================================== -->
+  <!-- TICKET DETAIL MODAL                        -->
+  <!-- ========================================== -->
+  <div id="ticket-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
+    <div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div class="space-y-0.5">
+          <div class="flex items-center space-x-2">
+            <span id="modal-ticket-id" class="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">#0000</span>
+            <span id="modal-ticket-priority" class="text-xs px-2 py-0.5 rounded-full font-semibold">Priority</span>
+            <span id="modal-ticket-status" class="text-xs px-2 py-0.5 rounded-full font-semibold">Status</span>
+          </div>
+          <h3 id="modal-ticket-title" class="font-bold text-slate-900 text-base leading-snug">Ticket Title</h3>
+        </div>
+        <button onclick="closeTicketModal()" class="text-slate-400 hover:text-slate-700 p-1 rounded-lg hover:bg-slate-200 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="px-6 py-4 overflow-y-auto space-y-5 flex-1">
+        
+        <!-- Metadata Pill Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200 text-xs">
+          <div>
+            <span class="text-slate-500 block">Customer</span>
+            <span id="modal-cust-name" class="font-semibold text-slate-800">--</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Email</span>
+            <span id="modal-cust-email" class="font-semibold text-slate-800 truncate block">--</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Department</span>
+            <span id="modal-dept-name" class="font-semibold text-slate-800">--</span>
+          </div>
+          <div>
+            <span class="text-slate-500 block">Assigned Agent</span>
+            <span id="modal-agent-name" class="font-semibold text-blue-600">--</span>
+          </div>
+        </div>
+
+        <!-- Customer Message / Description -->
+        <div>
+          <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5">Customer Message</h4>
+          <div id="modal-ticket-desc" class="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-sm text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+        </div>
+
+        <!-- Phase 2: NLP Intelligence Card -->
+        <div class="bg-indigo-50/60 p-4 rounded-xl border border-indigo-200 space-y-3">
+          <div class="flex items-center justify-between border-b border-indigo-100 pb-2">
+            <span class="text-xs font-bold text-indigo-950 uppercase tracking-wider flex items-center space-x-1.5">
+              <span>🧠 NLP Intelligence & Extracted Entities</span>
+            </span>
+            <button onclick="triggerReanalysis()" class="text-[11px] text-indigo-700 hover:underline font-semibold">
+              Re-run NLP Analysis
+            </button>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+            <div>
+              <span class="text-slate-500 block">Predicted Category</span>
+              <span id="modal-nlp-cat" class="font-bold text-blue-700 text-sm">--</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">Detected Intent</span>
+              <span id="modal-nlp-intent" class="font-bold text-slate-800 text-sm">--</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">Confidence</span>
+              <span id="modal-nlp-conf" class="font-bold text-emerald-700 text-sm">--%</span>
+            </div>
+            <div>
+              <span class="text-slate-500 block">Sentiment</span>
+              <span id="modal-nlp-sentiment" class="font-bold text-slate-800 text-sm">--</span>
+            </div>
+          </div>
+
+          <!-- Entities Display -->
+          <div>
+            <span class="text-xs font-semibold text-indigo-900 block mb-1">Extracted Entities (spaCy):</span>
+            <div id="modal-nlp-entities" class="flex flex-wrap gap-1.5 text-xs">
+              <span class="text-slate-400 italic">None detected</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Management Controls (Status & Reassignment) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-200">
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Update Status</label>
+            <div class="flex items-center space-x-2">
+              <select id="modal-status-select" class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white">
+                <option value="OPEN">OPEN</option>
+                <option value="IN_PROGRESS">IN_PROGRESS</option>
+                <option value="RESOLVED">RESOLVED</option>
+                <option value="CLOSED">CLOSED</option>
+              </select>
+              <button onclick="updateTicketStatus()" class="px-3 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-lg text-xs font-semibold">
+                Apply
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Reassign Agent</label>
+            <div class="flex items-center space-x-2">
+              <select id="modal-reassign-select" class="flex-1 px-3 py-2 text-xs rounded-lg border border-slate-300 bg-white">
+                <option value="">Select an Agent...</option>
+              </select>
+              <button onclick="reassignTicketAgent()" class="px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold">
+                Reassign
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Comments & Activity Stream -->
+        <div class="space-y-3 pt-2 border-t border-slate-200">
+          <h4 class="text-xs font-bold text-slate-500 uppercase tracking-wider">Comments & Collaboration</h4>
+          
+          <!-- New Comment Input -->
+          <div class="space-y-2">
+            <textarea id="modal-new-comment" rows="2" placeholder="Write a response or note..." class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+            <div class="flex items-center justify-between">
+              <label class="flex items-center space-x-1.5 text-xs text-slate-600">
+                <input type="checkbox" id="modal-comment-internal" class="rounded text-blue-600">
+                <span>Internal Team Note (hidden from customer)</span>
+              </label>
+              <button onclick="submitComment()" class="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-semibold">
+                Post Comment
+              </button>
+            </div>
+          </div>
+
+          <!-- Existing Comments List -->
+          <div id="modal-comments-list" class="space-y-2 max-h-48 overflow-y-auto">
+            <span class="text-xs text-slate-400 italic">No comments yet</span>
+          </div>
+
+          <!-- Activity History Collapsible -->
+          <details class="text-xs text-slate-500 pt-2 border-t border-slate-100">
+            <summary class="cursor-pointer font-semibold hover:text-slate-800">View Audit Activity History</summary>
+            <div id="modal-activity-list" class="mt-2 space-y-1.5 pl-2 border-l-2 border-slate-200"></div>
+          </details>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================== -->
+  <!-- QUICK USER LOGIN MODAL                     -->
+  <!-- ========================================== -->
+  <div id="login-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-overlay hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-200 pb-3">
+        <div>
+          <h3 class="font-bold text-slate-900 text-lg">Switch User / Login</h3>
+          <p class="text-xs text-slate-500">Test different RBAC permissions (Admin, Manager, Agent, Customer).</p>
+        </div>
+        <button onclick="closeLoginModal()" class="text-slate-400 hover:text-slate-700">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Quick 1-Click Login Buttons -->
+      <div class="space-y-2">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">1-Click Demo Accounts:</span>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <button onclick="quickLogin('admin@ticketrouting.com', 'AdminPassword123!')" class="p-2.5 rounded-lg border border-slate-200 hover:border-purple-300 hover:bg-purple-50 text-left font-medium">
+            <div class="font-bold text-purple-700">👑 Admin</div>
+            <div class="text-[10px] text-slate-500 truncate">admin@ticketrouting.com</div>
+          </button>
+          <button onclick="quickLogin('manager@ticketrouting.com', 'ManagerPass123!')" class="p-2.5 rounded-lg border border-slate-200 hover:border-indigo-300 hover:bg-indigo-50 text-left font-medium">
+            <div class="font-bold text-indigo-700">👔 Manager</div>
+            <div class="text-[10px] text-slate-500 truncate">manager@ticketrouting.com</div>
+          </button>
+          <button onclick="quickLogin('alex.tech@ticketrouting.com', 'AgentPass123!')" class="p-2.5 rounded-lg border border-slate-200 hover:border-blue-300 hover:bg-blue-50 text-left font-medium">
+            <div class="font-bold text-blue-700">👨‍💻 Agent (Alex)</div>
+            <div class="text-[10px] text-slate-500 truncate">alex.tech@ticketrouting.com</div>
+          </button>
+          <button onclick="quickLogin('customer@acmecorp.com', 'CustomerPass123!')" class="p-2.5 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50 text-left font-medium">
+            <div class="font-bold text-emerald-700">👤 Customer</div>
+            <div class="text-[10px] text-slate-500 truncate">customer@acmecorp.com</div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Manual Login Form -->
+      <form onsubmit="event.preventDefault(); submitManualLogin();" class="space-y-3 pt-3 border-t border-slate-100">
+        <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block">Or Manual Credentials:</span>
+        <div>
+          <input type="email" id="login-email" placeholder="Email" required class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300">
+        </div>
+        <div>
+          <input type="password" id="login-password" placeholder="Password" required class="w-full px-3 py-2 text-xs rounded-lg border border-slate-300">
+        </div>
+        <button type="submit" class="w-full py-2 bg-slate-900 hover:bg-black text-white rounded-lg text-xs font-semibold">
+          Sign In
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="/js/app.js"></script>
+</body>
+</html>

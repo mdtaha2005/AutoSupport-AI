@@ -1,0 +1,182 @@
+{
+  "dataset": {
+    "total_records": 840,
+    "train_size": 672,
+    "test_size": 168
+  },
+  "category_classification": {
+    "accuracy": 1.0,
+    "classes": [
+      "ACCOUNT",
+      "DELIVERY",
+      "OTHER",
+      "PAYMENT",
+      "PRODUCT",
+      "REFUND",
+      "TECHNICAL"
+    ],
+    "report": {
+      "ACCOUNT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "DELIVERY": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "OTHER": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "PAYMENT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "PRODUCT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "REFUND": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "TECHNICAL": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 24.0
+      },
+      "accuracy": 1.0,
+      "macro avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 168.0
+      },
+      "weighted avg": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 168.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        24,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        24,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        24,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        24,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        24,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        24,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        24
+      ]
+    ]
+  },
+  "intent_classification": {
+    "accuracy": 1.0,
+    "classes": [
+      "account_locked",
+      "api_error",
+      "bug_report",
+      "cancel_order_refund",
+      "card_declined",
+      "check_refund_status",
+      "compatibility_query",
+      "crash_exception",
+      "damaged_item_refund",
+      "damaged_shipment",
+      "delete_account",
+      "delivery_delay",
+      "dispute_charge",
+      "double_charge",
+      "feature_request",
+      "feedback",
+      "general_inquiry",
+      "human_agent",
+      "integration_failure",
+      "invoice_query",
+      "missing_package",
+      "partnership_request",
+      "password_reset",
+      "payment_failed",
+      "pricing_inquiry",
+      "product_specification",
+      "request_refund",
+      "server_timeout",
+      "spam_unknown",
+      "track_shipment",
+      "two_factor_issue",
+      "update_billing",
+      "update_profile",
+      "user_guide",
+      "wrong_address"
+    ]
+  },
+  "version": "1.0.0"
+}

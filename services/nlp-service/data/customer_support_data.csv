@@ -1,0 +1,841 @@
+text,category,intent,priority,sentiment
+My account has been locked after entering the wrong password three times on yesterday.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I have not received my refund of $150.00 for order ORD-33412. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+I noticed a double charge of 75 EUR on my credit card on Nov 12 with reference TXN-90214.,PAYMENT,double_charge,HIGH,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+"My delivery for Enterprise Gateway was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+URGENT: The courier failed to deliver SmartHub X1 to my address today. Order number #58291.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+i need to change the shipping address for order #10928 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Can you please check the status of my refund for Cloud Backup Pro? Reference TXN-90214.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+My account has been locked after entering the wrong password three times on 2026-11-04.,ACCOUNT,account_locked,HIGH,NEGATIVE
+getting rate limit 429 too many requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+The product SmartHub X1 does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+I returned Enterprise Gateway on last Friday. When will the refund of €120.00 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+"Customer support approved my refund on yesterday under ref ch_3M4K281, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+The subscription payment of $99.50 for Enterprise Gateway failed on Nov 10.,PAYMENT,invoice_query,HIGH,NEGATIVE
+URGENT: The courier failed to deliver Security Suite Pro to my address today. Order number ORD-33412.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+I want a full refund of €35.50 for order ORD-48291 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+I returned SmartHub X1 on today. When will the refund of €35.50 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+The courier failed to deliver Cloud Backup Pro to my address today. Order number #10928.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+URGENT: My payment of $49.99 is showing pending for order ORD-10928 since today.,PAYMENT,update_billing,URGENT,NEGATIVE
+The checkout system gave an error code PAY_ERR_301 when charging 75 EUR.,PAYMENT,card_declined,HIGH,NEGATIVE
+I noticed a double charge of $99.50 on my credit card on October 28th with reference ref#4412.,PAYMENT,double_charge,HIGH,NEGATIVE
+URGENT: How many concurrent users are supported on a single instance of Enterprise Gateway?,PRODUCT,compatibility_query,HIGH,NEUTRAL
+Can you send me the tax invoice for payment of €35.50 processed on last Friday?,PAYMENT,invoice_query,HIGH,NEGATIVE
+Can you sponsor our upcoming tech conference on 2026-11-04?,OTHER,human_agent,LOW,POSITIVE
+I need to update my billing card before the automatic renewal of $450.00 on today.,PAYMENT,double_charge,URGENT,NEGATIVE
+URGENT: Cannot access my organization workspace after role permissions changed on 2026-11-04.,ACCOUNT,delete_account,URGENT,NEGATIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+what are the hardware system requirements and memory footprint for smarthub x1?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Has order ORD-89210 shipped yet? It was placed on yesterday.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+What is the difference in features between the Starter and Enterprise tiers of OmniSensor 2.0?,PRODUCT,product_specification,LOW,NEUTRAL
+URGENT: Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,URGENT,NEGATIVE
+Payment failed during checkout for Cloud Backup Pro with transaction ID TXN-90214.,PAYMENT,payment_failed,HIGH,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+my payment of €120.00 is showing pending for order ord-10928 since october 28th.,PAYMENT,update_billing,HIGH,NEGATIVE
+Does OmniSensor 2.0 offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+Does Wireless Pro Headset offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+URGENT: Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,HIGH,POSITIVE
+What are the hardware system requirements and memory footprint for OmniSensor 2.0?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Does Wireless Pro Headset support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+I am requesting a refund of $150.00 for transaction ch_3M4K281 processed on Nov 10.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+URGENT: CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,URGENT,NEGATIVE
+random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+our webhook integration stopped receiving events on nov 12. error code e_conn_reset.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Payment failed during checkout for Enterprise Gateway with transaction ID PAY-9921.,PAYMENT,payment_failed,HIGH,NEGATIVE
+URGENT: I need to update my billing card before the automatic renewal of €35.50 on today.,PAYMENT,double_charge,URGENT,NEGATIVE
+I have not received my refund of 75 EUR for order #10928. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+i noticed a double charge of 250 usd on my credit card on today with reference ref#88219.,PAYMENT,double_charge,HIGH,NEGATIVE
+i suspect unauthorized access to my account on last friday. please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+URGENT: I am requesting a refund of $150.00 for transaction ref#88219 processed on October 28th.,REFUND,dispute_charge,HIGH,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+URGENT: Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,HIGH,POSITIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Can you send me the tax invoice for payment of £85.00 processed on yesterday?,PAYMENT,invoice_query,HIGH,NEGATIVE
+My card was declined when trying to pay $49.99 for order #58291. Transaction ref is TXN-90214.,PAYMENT,card_declined,HIGH,NEGATIVE
+my session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+I returned Wireless Pro Headset on Nov 10. When will the refund of $450.00 be credited?,REFUND,check_refund_status,HIGH,NEGATIVE
+has order ord-10928 shipped yet? it was placed on nov 10.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+URGENT: The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,URGENT,NEGATIVE
+Is OmniSensor 2.0 compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+"Can Enterprise Gateway integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+SSL certificate handshake failed for our custom domain endpoint on 2026-11-04.,TECHNICAL,bug_report,HIGH,NEGATIVE
+my card was declined when trying to pay $150.00 for order ord-10928. transaction ref is pay-9921.,PAYMENT,card_declined,HIGH,NEGATIVE
+The subscription payment of $450.00 for Security Suite Pro failed on yesterday.,PAYMENT,invoice_query,URGENT,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+"Tracking code says order ORD-77312 was delivered on Nov 12, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+URGENT: I cancelled order #10928 on Nov 10 and have not received my $99.50 refund yet.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+"My delivery for SmartHub X1 was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+URGENT: Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,URGENT,NEGATIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+The package for order #10928 arrived damaged and torn on today.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Can you please check the status of my refund for SmartHub X1? Reference ref#88219.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+payment failed during checkout for omnisensor 2.0 with transaction id pay-9921.,PAYMENT,payment_failed,HIGH,NEGATIVE
+"Can Cloud Backup Pro integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Does OmniSensor 2.0 support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+Can you send me the tax invoice for payment of €120.00 processed on October 28th?,PAYMENT,invoice_query,HIGH,NEGATIVE
+does wireless pro headset offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+I returned Security Suite Pro on October 28th. When will the refund of €120.00 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+Can we export reporting data to CSV or Excel directly from Security Suite Pro?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+I am requesting a refund of $150.00 for transaction ref#88219 processed on Nov 10.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+"customer support approved my refund on last friday under ref ch_9x2l891, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+The courier failed to deliver Wireless Pro Headset to my address today. Order number ORD-89210.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Can you sponsor our upcoming tech conference on Nov 10?,OTHER,human_agent,LOW,POSITIVE
+My account has been locked after entering the wrong password three times on last Friday.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+receiving http 500 internal server error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+Where is my money back? You promised a refund for order #77312 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+The package for order #10928 arrived damaged and torn on 2026-11-04.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Where can I find the official API documentation and code samples for Cloud Backup Pro?,PRODUCT,user_guide,LOW,NEUTRAL
+What is the difference in features between the Starter and Enterprise tiers of OmniSensor 2.0?,PRODUCT,product_specification,LOW,NEUTRAL
+my account has been locked after entering the wrong password three times on 3 days ago.,ACCOUNT,account_locked,HIGH,NEGATIVE
+My card was declined when trying to pay $150.00 for order ORD-10928. Transaction ref is ch_9X2L891.,PAYMENT,card_declined,HIGH,NEGATIVE
+just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+I cancelled order ORD-89210 on today and have not received my £85.00 refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+unable to sign in using sso / google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+"Can OmniSensor 2.0 integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+how do i update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+Where is my package for order #10928? Tracking has not updated since October 28th.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Is OmniSensor 2.0 compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+ssl certificate handshake failed for our custom domain endpoint on yesterday.,TECHNICAL,bug_report,HIGH,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+Please cancel my subscription for Security Suite Pro and refund the recent charge of $450.00.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+can you give me an estimated delivery date for order ord-48291 containing cloud backup pro?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+What are the hardware system requirements and memory footprint for SmartHub X1?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I suspect unauthorized access to my account on Nov 10. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+How many concurrent users are supported on a single instance of OmniSensor 2.0?,PRODUCT,compatibility_query,LOW,NEUTRAL
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+My card was declined when trying to pay 75 EUR for order ORD-77312. Transaction ref is ch_3M4K281.,PAYMENT,card_declined,HIGH,NEGATIVE
+why was i billed $49.99 without authorization? transaction id is ref#88219.,PAYMENT,payment_failed,HIGH,NEGATIVE
+can you send me the tax invoice for payment of €120.00 processed on october 28th?,PAYMENT,invoice_query,HIGH,NEGATIVE
+Cannot access my organization workspace after role permissions changed on today.,ACCOUNT,delete_account,HIGH,NEGATIVE
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Payment failed during checkout for Security Suite Pro with transaction ID TXN-90214.,PAYMENT,payment_failed,HIGH,NEGATIVE
+URGENT: Customs is holding my package with tracking number ORD-48291. What documents are needed?,DELIVERY,wrong_address,HIGH,NEGATIVE
+the product wireless pro headset does not match the description. please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+The subscription payment of €120.00 for Wireless Pro Headset failed on yesterday.,PAYMENT,invoice_query,HIGH,NEGATIVE
+can you please check the status of my refund for security suite pro? reference pay-9921.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+Cannot access my organization workspace after role permissions changed on last Friday.,ACCOUNT,delete_account,HIGH,NEGATIVE
+I want a full refund of €120.00 for order #10928 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+I suspect unauthorized access to my account on yesterday. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+Can you send me the tax invoice for payment of 75 EUR processed on last Friday?,PAYMENT,invoice_query,HIGH,NEGATIVE
+where can i find the official api documentation and code samples for smarthub x1?,PRODUCT,user_guide,LOW,NEUTRAL
+I cancelled order #58291 on yesterday and have not received my €35.50 refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+How many concurrent users are supported on a single instance of Cloud Backup Pro?,PRODUCT,compatibility_query,LOW,NEUTRAL
+What is the difference in features between the Starter and Enterprise tiers of Security Suite Pro?,PRODUCT,product_specification,LOW,NEUTRAL
+My payment of $49.99 is showing pending for order ORD-77312 since 3 days ago.,PAYMENT,update_billing,HIGH,NEGATIVE
+"My delivery for Security Suite Pro was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Where can I find the official API documentation and code samples for OmniSensor 2.0?,PRODUCT,user_guide,LOW,NEUTRAL
+"My delivery for Wireless Pro Headset was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+My bank confirmed payment was deducted for 250 USD but order ORD-33412 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+Please cancel my subscription for Enterprise Gateway and refund the recent charge of 250 USD.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+My order ORD-33412 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+"My delivery for Cloud Backup Pro was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Can you give me an estimated delivery date for order ORD-10928 containing Cloud Backup Pro?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Please cancel my subscription for Security Suite Pro and refund the recent charge of $150.00.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+URGENT: Please transfer this inquiry to a human agent.,OTHER,general_inquiry,HIGH,POSITIVE
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+"Can OmniSensor 2.0 integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+Can you send me the tax invoice for payment of 250 USD processed on today?,PAYMENT,invoice_query,HIGH,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+I am requesting a refund of $450.00 for transaction ref#88219 processed on 2026-11-04.,REFUND,dispute_charge,HIGH,NEGATIVE
+Can we export reporting data to CSV or Excel directly from OmniSensor 2.0?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+URGENT: Where is my money back? You promised a refund for order ORD-77312 within 5 business days.,REFUND,request_refund,HIGH,NEGATIVE
+My card was declined when trying to pay $49.99 for order ORD-77312. Transaction ref is TXN-88192.,PAYMENT,card_declined,HIGH,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+"Tracking code says order ORD-33412 was delivered on 3 days ago, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+I returned Enterprise Gateway on October 28th. When will the refund of $99.50 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+Can you give me an estimated delivery date for order ORD-33412 containing OmniSensor 2.0?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+can you give me an estimated delivery date for order ord-10928 containing cloud backup pro?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+URGENT: What is the difference in features between the Starter and Enterprise tiers of Cloud Backup Pro?,PRODUCT,product_specification,HIGH,NEUTRAL
+I returned Security Suite Pro on Nov 10. When will the refund of €35.50 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+Payment failed during checkout for OmniSensor 2.0 with transaction ID PAY-9921.,PAYMENT,payment_failed,HIGH,NEGATIVE
+My account has been locked after entering the wrong password three times on 2026-11-04.,ACCOUNT,account_locked,HIGH,NEGATIVE
+Customs is holding my package with tracking number #77312. What documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Is Enterprise Gateway compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+My order ORD-33412 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Why was I billed €35.50 without authorization? Transaction ID is ref#88219.,PAYMENT,payment_failed,HIGH,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on today.,TECHNICAL,bug_report,HIGH,NEGATIVE
+I have not received my refund of $99.50 for order ORD-77312. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+URGENT: I noticed a double charge of £85.00 on my credit card on 2026-11-04 with reference TXN-90214.,PAYMENT,double_charge,URGENT,NEGATIVE
+The checkout system gave an error code PAY_ERR_301 when charging $450.00.,PAYMENT,card_declined,URGENT,NEGATIVE
+Payment failed during checkout for Security Suite Pro with transaction ID TXN-90214.,PAYMENT,payment_failed,HIGH,NEGATIVE
+The product OmniSensor 2.0 does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+"Can Security Suite Pro integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+I want a full refund of $99.50 for order ORD-89210 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+"hello, i would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+"hello, i would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+where is my package for order ord-48291? tracking has not updated since 3 days ago.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Cannot access my organization workspace after role permissions changed on last Friday.,ACCOUNT,delete_account,HIGH,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+i suspect unauthorized access to my account on yesterday. please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+I need to change the shipping address for order ORD-48291 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+The checkout system gave an error code PAY_ERR_301 when charging 75 EUR.,PAYMENT,card_declined,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+the sdk throws a null pointer exception when initializing client with api key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+I have not received my refund of £85.00 for order #77312. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+URGENT: The subscription payment of $49.99 for Cloud Backup Pro failed on Nov 12.,PAYMENT,invoice_query,URGENT,NEGATIVE
+Where can I find the official API documentation and code samples for SmartHub X1?,PRODUCT,user_guide,LOW,NEUTRAL
+URGENT: Where can I find the official API documentation and code samples for OmniSensor 2.0?,PRODUCT,user_guide,HIGH,NEUTRAL
+can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+Where is my money back? You promised a refund for order #10928 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+Where can I find the official API documentation and code samples for OmniSensor 2.0?,PRODUCT,user_guide,LOW,NEUTRAL
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+can you send me the tax invoice for payment of $450.00 processed on today?,PAYMENT,invoice_query,URGENT,NEGATIVE
+Cannot access my organization workspace after role permissions changed on Nov 10.,ACCOUNT,delete_account,HIGH,NEGATIVE
+"Customer support approved my refund on Nov 10 under ref ref#4412, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+Payment failed during checkout for Cloud Backup Pro with transaction ID TXN-88192.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+Can you give me an estimated delivery date for order ORD-48291 containing Wireless Pro Headset?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+The product Wireless Pro Headset does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+The product Wireless Pro Headset does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Does Cloud Backup Pro offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+what is the difference in features between the starter and enterprise tiers of wireless pro headset?,PRODUCT,product_specification,LOW,NEUTRAL
+I have not received my refund of $49.99 for order ORD-33412. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Can we export reporting data to CSV or Excel directly from Cloud Backup Pro?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+My payment of 75 EUR is showing pending for order ORD-89210 since 3 days ago.,PAYMENT,update_billing,HIGH,NEGATIVE
+what is the difference in features between the starter and enterprise tiers of omnisensor 2.0?,PRODUCT,product_specification,LOW,NEUTRAL
+i have not received my refund of €120.00 for order ord-33412. please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Customs is holding my package with tracking number ORD-10928. What documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+How many concurrent users are supported on a single instance of Security Suite Pro?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+where is my money back? you promised a refund for order #10928 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on 3 days ago.,TECHNICAL,bug_report,HIGH,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Can we export reporting data to CSV or Excel directly from Cloud Backup Pro?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Where is my package for order ORD-33412? Tracking has not updated since 2026-11-04.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Where can I find the official API documentation and code samples for Security Suite Pro?,PRODUCT,user_guide,LOW,NEUTRAL
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+"URGENT: Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,HIGH,POSITIVE
+My payment of $450.00 is showing pending for order #77312 since 2026-11-04.,PAYMENT,update_billing,URGENT,NEGATIVE
+how many concurrent users are supported on a single instance of enterprise gateway?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+i want a full refund of €120.00 for order ord-33412 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+ssl certificate handshake failed for our custom domain endpoint on last friday.,TECHNICAL,bug_report,HIGH,NEGATIVE
+i cancelled order ord-89210 on nov 12 and have not received my $450.00 refund yet.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+The product SmartHub X1 does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+I returned Cloud Backup Pro on October 28th. When will the refund of $150.00 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+Our webhook integration stopped receiving events on Nov 12. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+our webhook integration stopped receiving events on 3 days ago. error code e_conn_reset.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+My card was declined when trying to pay €35.50 for order #10928. Transaction ref is ch_3M4K281.,PAYMENT,card_declined,HIGH,NEGATIVE
+I returned Wireless Pro Headset on 3 days ago. When will the refund of $99.50 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+I have not received my refund of 250 USD for order ORD-77312. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Can you please check the status of my refund for SmartHub X1? Reference TXN-90214.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+Our webhook integration stopped receiving events on last Friday. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Cannot access my organization workspace after role permissions changed on yesterday.,ACCOUNT,delete_account,HIGH,NEGATIVE
+"My delivery for Enterprise Gateway was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+my bank confirmed payment was deducted for €35.50 but order ord-89210 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+I noticed a double charge of $150.00 on my credit card on last Friday with reference PAY-9921.,PAYMENT,double_charge,HIGH,NEGATIVE
+receiving http 500 internal server error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+Where can I find the official API documentation and code samples for Security Suite Pro?,PRODUCT,user_guide,LOW,NEUTRAL
+What are the hardware system requirements and memory footprint for SmartHub X1?,PRODUCT,compatibility_query,LOW,NEUTRAL
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on 2026-11-04.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+URGENT: The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,URGENT,NEGATIVE
+"My delivery for Security Suite Pro was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+What are the hardware system requirements and memory footprint for Security Suite Pro?,PRODUCT,compatibility_query,LOW,NEUTRAL
+The courier failed to deliver Enterprise Gateway to my address today. Order number ORD-89210.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+"Customer support approved my refund on last Friday under ref TXN-88192, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+Is Security Suite Pro compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+Where can I find the official API documentation and code samples for Enterprise Gateway?,PRODUCT,user_guide,LOW,NEUTRAL
+I need to change the shipping address for order ORD-48291 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+i suspect unauthorized access to my account on nov 10. please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+I am requesting a refund of €35.50 for transaction ch_9X2L891 processed on yesterday.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+cors policy error when connecting frontend client to the api backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+I am requesting a refund of £85.00 for transaction ch_9X2L891 processed on 2026-11-04.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+"URGENT: Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,HIGH,POSITIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+My bank confirmed payment was deducted for €35.50 but order ORD-10928 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+Can we export reporting data to CSV or Excel directly from Enterprise Gateway?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+I returned Enterprise Gateway on today. When will the refund of 250 USD be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+Why was I billed $99.50 without authorization? Transaction ID is TXN-90214.,PAYMENT,payment_failed,HIGH,NEGATIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+Where is my money back? You promised a refund for order ORD-77312 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+My account has been locked after entering the wrong password three times on 3 days ago.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+"URGENT: Tracking code says order #58291 was delivered on 3 days ago, but I received nothing.",DELIVERY,missing_package,HIGH,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+the courier failed to deliver security suite pro to my address today. order number ord-89210.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+My payment of 75 EUR is showing pending for order #77312 since last Friday.,PAYMENT,update_billing,HIGH,NEGATIVE
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I need to update my billing card before the automatic renewal of $99.50 on Nov 10.,PAYMENT,double_charge,HIGH,NEGATIVE
+where is my package for order ord-33412? tracking has not updated since 3 days ago.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+my session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+The courier failed to deliver Security Suite Pro to my address today. Order number ORD-33412.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+the application crashes with an unhandled exception when uploading files larger than 10mb.,TECHNICAL,bug_report,HIGH,NEGATIVE
+URGENT: Customs is holding my package with tracking number ORD-48291. What documents are needed?,DELIVERY,wrong_address,HIGH,NEGATIVE
+My order #77312 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on 3 days ago.,TECHNICAL,bug_report,HIGH,NEGATIVE
+i have not received my refund of £85.00 for order ord-33412. please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+URGENT: Why was I billed $450.00 without authorization? Transaction ID is ch_3M4K281.,PAYMENT,payment_failed,URGENT,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Is Cloud Backup Pro compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+why was i billed €120.00 without authorization? transaction id is txn-88192.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Can you please check the status of my refund for Security Suite Pro? Reference PAY-9921.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+I want a full refund of $49.99 for order #10928 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+"Customer support approved my refund on last Friday under ref ref#88219, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+Has order ORD-10928 shipped yet? It was placed on Nov 10.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+Payment failed during checkout for Enterprise Gateway with transaction ID TXN-90214.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Has order #58291 shipped yet? It was placed on 2026-11-04.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+How many concurrent users are supported on a single instance of OmniSensor 2.0?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Can you send me the tax invoice for payment of $450.00 processed on today?,PAYMENT,invoice_query,URGENT,NEGATIVE
+Cannot access my organization workspace after role permissions changed on Nov 10.,ACCOUNT,delete_account,HIGH,NEGATIVE
+"Customer support approved my refund on Nov 10 under ref TXN-88192, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+I need to update my billing card before the automatic renewal of £85.00 on last Friday.,PAYMENT,double_charge,HIGH,NEGATIVE
+Is Wireless Pro Headset compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+I need to update my billing card before the automatic renewal of 75 EUR on yesterday.,PAYMENT,double_charge,HIGH,NEGATIVE
+Does Wireless Pro Headset support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+I need to change the shipping address for order ORD-48291 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+cors policy error when connecting frontend client to the api backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+Is Security Suite Pro compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+Where is my money back? You promised a refund for order ORD-48291 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+URGENT: Can you give me an estimated delivery date for order #10928 containing Cloud Backup Pro?,DELIVERY,track_shipment,HIGH,NEGATIVE
+Can you give me an estimated delivery date for order #77312 containing Security Suite Pro?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+the subscription payment of $99.50 for security suite pro failed on 3 days ago.,PAYMENT,invoice_query,HIGH,NEGATIVE
+the checkout system gave an error code pay_err_301 when charging €35.50.,PAYMENT,card_declined,HIGH,NEGATIVE
+i have not received my refund of €35.50 for order ord-48291. please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+receiving http 500 internal server error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+Where is my money back? You promised a refund for order ORD-77312 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+Can you sponsor our upcoming tech conference on Nov 10?,OTHER,human_agent,LOW,POSITIVE
+does wireless pro headset offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+i need to change the shipping address for order ord-10928 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+URGENT: Can you sponsor our upcoming tech conference on Nov 10?,OTHER,human_agent,HIGH,POSITIVE
+Where is my package for order ORD-10928? Tracking has not updated since last Friday.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Does Cloud Backup Pro offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+"Tracking code says order ORD-89210 was delivered on yesterday, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+What are the hardware system requirements and memory footprint for Wireless Pro Headset?,PRODUCT,compatibility_query,LOW,NEUTRAL
+URGENT: Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,URGENT,NEGATIVE
+"Tracking code says order #77312 was delivered on Nov 10, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+The package for order #77312 arrived damaged and torn on Nov 10.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+The package for order ORD-77312 arrived damaged and torn on last Friday.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+My bank confirmed payment was deducted for €120.00 but order ORD-48291 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+I need to change the shipping address for order #77312 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+does wireless pro headset support postgresql version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+URGENT: Cannot access my organization workspace after role permissions changed on yesterday.,ACCOUNT,delete_account,URGENT,NEGATIVE
+Does Enterprise Gateway offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+where is my money back? you promised a refund for order #58291 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+I need to change the shipping address for order ORD-77312 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Customs is holding my package with tracking number #58291. What documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+What is the difference in features between the Starter and Enterprise tiers of Enterprise Gateway?,PRODUCT,product_specification,LOW,NEUTRAL
+URGENT: Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,URGENT,NEGATIVE
+random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+The product Cloud Backup Pro does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Can you sponsor our upcoming tech conference on Nov 12?,OTHER,human_agent,LOW,POSITIVE
+my order ord-89210 was shipped to the wrong postal code. please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+My card was declined when trying to pay $49.99 for order ORD-77312. Transaction ref is TXN-88192.,PAYMENT,card_declined,HIGH,NEGATIVE
+"Tracking code says order #10928 was delivered on Nov 10, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+The package for order ORD-48291 arrived damaged and torn on 3 days ago.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+Can you sponsor our upcoming tech conference on October 28th?,OTHER,human_agent,LOW,POSITIVE
+I have not received my refund of $450.00 for order #77312. Please expedite.,REFUND,damaged_item_refund,HIGH,NEGATIVE
+URGENT: Our webhook integration stopped receiving events on 2026-11-04. Error code E_CONN_RESET.,TECHNICAL,server_timeout,URGENT,NEGATIVE
+URGENT: Customs is holding my package with tracking number ORD-33412. What documents are needed?,DELIVERY,wrong_address,HIGH,NEGATIVE
+URGENT: We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,HIGH,NEUTRAL
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+Why was I billed £85.00 without authorization? Transaction ID is ch_9X2L891.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Can we export reporting data to CSV or Excel directly from OmniSensor 2.0?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+receiving http 500 internal server error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+Our webhook integration stopped receiving events on 2026-11-04. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Please cancel my subscription for OmniSensor 2.0 and refund the recent charge of €35.50.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+The package for order #10928 arrived damaged and torn on Nov 10.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+URGENT: Is your office open on public holidays and weekends?,OTHER,spam_unknown,HIGH,POSITIVE
+i suspect unauthorized access to my account on 3 days ago. please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+Can you give me an estimated delivery date for order #77312 containing Cloud Backup Pro?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Can you give me an estimated delivery date for order ORD-48291 containing Wireless Pro Headset?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Can you send me the tax invoice for payment of 75 EUR processed on October 28th?,PAYMENT,invoice_query,HIGH,NEGATIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+i am getting an 'invalid credentials' error even though i just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+does security suite pro support postgresql version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Can you please check the status of my refund for Security Suite Pro? Reference ref#4412.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+URGENT: Can you sponsor our upcoming tech conference on Nov 12?,OTHER,human_agent,HIGH,POSITIVE
+I want a full refund of 75 EUR for order ORD-10928 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+Cannot access my organization workspace after role permissions changed on Nov 10.,ACCOUNT,delete_account,HIGH,NEGATIVE
+i need to change the shipping address for order ord-33412 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+I cancelled order ORD-48291 on yesterday and have not received my £85.00 refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+our webhook integration stopped receiving events on october 28th. error code e_conn_reset.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+can we export reporting data to csv or excel directly from enterprise gateway?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+Can you sponsor our upcoming tech conference on today?,OTHER,human_agent,LOW,POSITIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+The product Cloud Backup Pro does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Can you sponsor our upcoming tech conference on 2026-11-04?,OTHER,human_agent,LOW,POSITIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Does OmniSensor 2.0 support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+My card was declined when trying to pay 250 USD for order ORD-89210. Transaction ref is ch_9X2L891.,PAYMENT,card_declined,HIGH,NEGATIVE
+Can you send me the tax invoice for payment of £85.00 processed on Nov 10?,PAYMENT,invoice_query,HIGH,NEGATIVE
+Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+The product Security Suite Pro does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+the package for order ord-48291 arrived damaged and torn on yesterday.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+how do i update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+Cannot access my organization workspace after role permissions changed on 3 days ago.,ACCOUNT,delete_account,HIGH,NEGATIVE
+can you send me the tax invoice for payment of 75 eur processed on nov 12?,PAYMENT,invoice_query,HIGH,NEGATIVE
+database queries are timing out with 504 gateway timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+The checkout system gave an error code PAY_ERR_301 when charging $99.50.,PAYMENT,card_declined,HIGH,NEGATIVE
+The subscription payment of $99.50 for OmniSensor 2.0 failed on 3 days ago.,PAYMENT,invoice_query,HIGH,NEGATIVE
+My payment of €35.50 is showing pending for order ORD-10928 since 3 days ago.,PAYMENT,update_billing,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+URGENT: The subscription payment of $450.00 for Security Suite Pro failed on October 28th.,PAYMENT,invoice_query,URGENT,NEGATIVE
+How many concurrent users are supported on a single instance of OmniSensor 2.0?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+great job on the new release! the system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+My account has been locked after entering the wrong password three times on Nov 10.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I returned OmniSensor 2.0 on Nov 12. When will the refund of €35.50 be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+the courier failed to deliver omnisensor 2.0 to my address today. order number ord-48291.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+I need to update my billing card before the automatic renewal of 250 USD on October 28th.,PAYMENT,double_charge,HIGH,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+what are the hardware system requirements and memory footprint for enterprise gateway?,PRODUCT,compatibility_query,LOW,NEUTRAL
+How many concurrent users are supported on a single instance of Wireless Pro Headset?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+URGENT: Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,HIGH,POSITIVE
+What are the hardware system requirements and memory footprint for Wireless Pro Headset?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+the sdk throws a null pointer exception when initializing client with api key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+please cancel my subscription for smarthub x1 and refund the recent charge of $450.00.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+Where is my money back? You promised a refund for order ORD-48291 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Where is my package for order #77312? Tracking has not updated since today.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+URGENT: Can you please check the status of my refund for Wireless Pro Headset? Reference TXN-88192.,REFUND,check_refund_status,HIGH,NEGATIVE
+I need to change the shipping address for order #58291 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+Does Wireless Pro Headset offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+How many concurrent users are supported on a single instance of Enterprise Gateway?,PRODUCT,compatibility_query,LOW,NEUTRAL
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+What is the difference in features between the Starter and Enterprise tiers of SmartHub X1?,PRODUCT,product_specification,LOW,NEUTRAL
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+I need to update my billing card before the automatic renewal of £85.00 on Nov 12.,PAYMENT,double_charge,HIGH,NEGATIVE
+Can we export reporting data to CSV or Excel directly from Cloud Backup Pro?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+i cannot log into my account. the password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+The package for order ORD-10928 arrived damaged and torn on 2026-11-04.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+Why was I billed €120.00 without authorization? Transaction ID is PAY-9921.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Does Wireless Pro Headset support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+"URGENT: My delivery for SmartHub X1 was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,HIGH,NEGATIVE
+My account has been locked after entering the wrong password three times on 2026-11-04.,ACCOUNT,account_locked,HIGH,NEGATIVE
+"Customer support approved my refund on October 28th under ref ref#88219, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+SSL certificate handshake failed for our custom domain endpoint on October 28th.,TECHNICAL,bug_report,HIGH,NEGATIVE
+what is the difference in features between the starter and enterprise tiers of smarthub x1?,PRODUCT,product_specification,LOW,NEUTRAL
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+how do i update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+the subscription payment of €35.50 for smarthub x1 failed on 2026-11-04.,PAYMENT,invoice_query,HIGH,NEGATIVE
+i noticed a double charge of £85.00 on my credit card on october 28th with reference txn-90214.,PAYMENT,double_charge,HIGH,NEGATIVE
+I need to change the shipping address for order ORD-89210 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Our webhook integration stopped receiving events on today. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+"My delivery for Security Suite Pro was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+Is Wireless Pro Headset compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+I want a full refund of £85.00 for order ORD-77312 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+cannot access my organization workspace after role permissions changed on yesterday.,ACCOUNT,delete_account,HIGH,NEGATIVE
+Has order #58291 shipped yet? It was placed on today.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+Does Cloud Backup Pro support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+I want a full refund of 250 USD for order ORD-89210 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+my card was declined when trying to pay $49.99 for order ord-10928. transaction ref is txn-90214.,PAYMENT,card_declined,HIGH,NEGATIVE
+i cancelled order ord-10928 on 2026-11-04 and have not received my 250 usd refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+i cancelled order #58291 on nov 12 and have not received my 250 usd refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+Payment failed during checkout for Security Suite Pro with transaction ID PAY-9921.,PAYMENT,payment_failed,HIGH,NEGATIVE
+URGENT: Payment failed during checkout for Enterprise Gateway with transaction ID TXN-88192.,PAYMENT,payment_failed,URGENT,NEGATIVE
+URGENT: Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,URGENT,NEGATIVE
+Does Wireless Pro Headset offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+I noticed a double charge of $49.99 on my credit card on Nov 10 with reference ref#88219.,PAYMENT,double_charge,HIGH,NEGATIVE
+URGENT: I noticed a double charge of 250 USD on my credit card on October 28th with reference TXN-90214.,PAYMENT,double_charge,URGENT,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+"Can Cloud Backup Pro integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+I want a full refund of 75 EUR for order ORD-33412 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on yesterday.,TECHNICAL,bug_report,HIGH,NEGATIVE
+I suspect unauthorized access to my account on yesterday. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+My bank confirmed payment was deducted for €120.00 but order #10928 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+URGENT: Please cancel my subscription for Wireless Pro Headset and refund the recent charge of $49.99.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+"My delivery for Cloud Backup Pro was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Where is my package for order ORD-33412? Tracking has not updated since last Friday.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+i am getting an 'invalid credentials' error even though i just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+My account has been locked after entering the wrong password three times on Nov 10.,ACCOUNT,account_locked,HIGH,NEGATIVE
+Can you sponsor our upcoming tech conference on 3 days ago?,OTHER,human_agent,LOW,POSITIVE
+what are the hardware system requirements and memory footprint for security suite pro?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+I cancelled order ORD-10928 on last Friday and have not received my 250 USD refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+My order #10928 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+The courier failed to deliver SmartHub X1 to my address today. Order number #77312.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+i cannot log into my account. the password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Can you sponsor our upcoming tech conference on October 28th?,OTHER,human_agent,LOW,POSITIVE
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+i have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+Can you sponsor our upcoming tech conference on October 28th?,OTHER,human_agent,LOW,POSITIVE
+"Tracking code says order ORD-33412 was delivered on October 28th, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+My bank confirmed payment was deducted for $99.50 but order #77312 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+"can wireless pro headset integrate with slack, microsoft teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+I want a full refund of $450.00 for order ORD-48291 which arrived broken.,REFUND,request_refund,HIGH,NEGATIVE
+URGENT: The package for order #77312 arrived damaged and torn on yesterday.,DELIVERY,delivery_delay,HIGH,NEGATIVE
+My order ORD-77312 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+I am requesting a refund of $150.00 for transaction ref#88219 processed on yesterday.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+URGENT: My order #77312 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+The checkout system gave an error code PAY_ERR_301 when charging $150.00.,PAYMENT,card_declined,HIGH,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+I need to update my billing card before the automatic renewal of £85.00 on yesterday.,PAYMENT,double_charge,HIGH,NEGATIVE
+my card was declined when trying to pay $450.00 for order #77312. transaction ref is txn-90214.,PAYMENT,card_declined,URGENT,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+URGENT: I suspect unauthorized access to my account on Nov 12. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+I need to change the shipping address for order #10928 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+Please cancel my subscription for Enterprise Gateway and refund the recent charge of €35.50.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+The courier failed to deliver OmniSensor 2.0 to my address today. Order number #77312.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+URGENT: Please cancel my subscription for Security Suite Pro and refund the recent charge of 250 USD.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+"Customer support approved my refund on yesterday under ref ch_9X2L891, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+URGENT: Please cancel my subscription for Security Suite Pro and refund the recent charge of $450.00.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+Our webhook integration stopped receiving events on Nov 10. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Can we export reporting data to CSV or Excel directly from Wireless Pro Headset?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+My bank confirmed payment was deducted for €35.50 but order #58291 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+cannot access my organization workspace after role permissions changed on 2026-11-04.,ACCOUNT,delete_account,HIGH,NEGATIVE
+The checkout system gave an error code PAY_ERR_301 when charging $150.00.,PAYMENT,card_declined,HIGH,NEGATIVE
+I am requesting a refund of 75 EUR for transaction ref#88219 processed on 3 days ago.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+Our webhook integration stopped receiving events on Nov 10. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+My card was declined when trying to pay £85.00 for order ORD-48291. Transaction ref is ch_3M4K281.,PAYMENT,card_declined,HIGH,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+I cancelled order #58291 on October 28th and have not received my £85.00 refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+Where is my package for order ORD-77312? Tracking has not updated since today.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+can we export reporting data to csv or excel directly from enterprise gateway?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+URGENT: I suspect unauthorized access to my account on October 28th. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+How many concurrent users are supported on a single instance of Security Suite Pro?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Does Enterprise Gateway support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+The product Wireless Pro Headset does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+My account has been locked after entering the wrong password three times on October 28th.,ACCOUNT,account_locked,HIGH,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+URGENT: Can we export reporting data to CSV or Excel directly from Security Suite Pro?,PRODUCT,pricing_inquiry,HIGH,NEUTRAL
+the checkout system gave an error code pay_err_301 when charging $150.00.,PAYMENT,card_declined,HIGH,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+The subscription payment of €35.50 for Cloud Backup Pro failed on yesterday.,PAYMENT,invoice_query,HIGH,NEGATIVE
+"Hello, I would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+the product security suite pro does not match the description. please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+URGENT: I noticed a double charge of $150.00 on my credit card on today with reference ref#4412.,PAYMENT,double_charge,URGENT,NEGATIVE
+"URGENT: Can Wireless Pro Headset integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,HIGH,NEUTRAL
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+URGENT: I have general feedback about the onboarding documentation.,OTHER,human_agent,HIGH,POSITIVE
+Does Security Suite Pro offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+What is the difference in features between the Starter and Enterprise tiers of Enterprise Gateway?,PRODUCT,product_specification,LOW,NEUTRAL
+Payment failed during checkout for SmartHub X1 with transaction ID ref#88219.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Where is my money back? You promised a refund for order ORD-48291 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+Where is my package for order ORD-33412? Tracking has not updated since October 28th.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on Nov 10.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Where is my package for order ORD-33412? Tracking has not updated since today.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+I am requesting a refund of $99.50 for transaction ref#88219 processed on last Friday.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+Customs is holding my package with tracking number #58291. What documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Is SmartHub X1 compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+the application crashes with an unhandled exception when uploading files larger than 10mb.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+URGENT: Can you please check the status of my refund for Cloud Backup Pro? Reference ch_3M4K281.,REFUND,check_refund_status,HIGH,NEGATIVE
+my payment of €35.50 is showing pending for order #77312 since 3 days ago.,PAYMENT,update_billing,HIGH,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+does cloud backup pro offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+the checkout system gave an error code pay_err_301 when charging $450.00.,PAYMENT,card_declined,URGENT,NEGATIVE
+Why was I billed $99.50 without authorization? Transaction ID is ref#88219.,PAYMENT,payment_failed,HIGH,NEGATIVE
+URGENT: Where is my package for order ORD-77312? Tracking has not updated since today.,DELIVERY,track_shipment,HIGH,NEGATIVE
+Can you please check the status of my refund for Cloud Backup Pro? Reference ref#88219.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+Can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+My order #10928 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+"hello, i would like to speak to a representative regarding partnership opportunities.",OTHER,general_inquiry,LOW,POSITIVE
+my account has been locked after entering the wrong password three times on today.,ACCOUNT,account_locked,HIGH,NEGATIVE
+The package for order #10928 arrived damaged and torn on yesterday.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+"Tracking code says order ORD-10928 was delivered on Nov 10, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+"Tracking code says order ORD-89210 was delivered on today, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+Please cancel my subscription for Cloud Backup Pro and refund the recent charge of 75 EUR.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+URGENT: Where is my money back? You promised a refund for order #10928 within 5 business days.,REFUND,request_refund,HIGH,NEGATIVE
+URGENT: Has order #10928 shipped yet? It was placed on 2026-11-04.,DELIVERY,missing_package,HIGH,NEGATIVE
+i am requesting a refund of 250 usd for transaction ref#4412 processed on 2026-11-04.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+we would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+How many concurrent users are supported on a single instance of SmartHub X1?,PRODUCT,compatibility_query,LOW,NEUTRAL
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+URGENT: Can you send me the tax invoice for payment of $450.00 processed on yesterday?,PAYMENT,invoice_query,URGENT,NEGATIVE
+My order ORD-33412 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+The checkout system gave an error code PAY_ERR_301 when charging €120.00.,PAYMENT,card_declined,HIGH,NEGATIVE
+Why was I billed 75 EUR without authorization? Transaction ID is TXN-88192.,PAYMENT,payment_failed,HIGH,NEGATIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+"Can SmartHub X1 integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+The checkout system gave an error code PAY_ERR_301 when charging 75 EUR.,PAYMENT,card_declined,HIGH,NEGATIVE
+Has order ORD-10928 shipped yet? It was placed on 3 days ago.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+my payment of $150.00 is showing pending for order ord-48291 since october 28th.,PAYMENT,update_billing,HIGH,NEGATIVE
+The subscription payment of £85.00 for OmniSensor 2.0 failed on 2026-11-04.,PAYMENT,invoice_query,HIGH,NEGATIVE
+the sdk throws a null pointer exception when initializing client with api key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+I cannot log into my account. The password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+Why was I billed £85.00 without authorization? Transaction ID is ch_3M4K281.,PAYMENT,payment_failed,HIGH,NEGATIVE
+URGENT: I want a full refund of €35.50 for order #77312 which arrived broken.,REFUND,request_refund,HIGH,NEGATIVE
+Where is my money back? You promised a refund for order #77312 within 5 business days.,REFUND,request_refund,MEDIUM,NEGATIVE
+websocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+My card was declined when trying to pay 75 EUR for order ORD-48291. Transaction ref is TXN-90214.,PAYMENT,card_declined,HIGH,NEGATIVE
+I returned Wireless Pro Headset on 2026-11-04. When will the refund of $450.00 be credited?,REFUND,check_refund_status,HIGH,NEGATIVE
+can you give me an estimated delivery date for order #10928 containing smarthub x1?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+customs is holding my package with tracking number ord-48291. what documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+Has order ORD-10928 shipped yet? It was placed on Nov 12.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+i am requesting a refund of €120.00 for transaction txn-90214 processed on 2026-11-04.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+URGENT: Please cancel my subscription for OmniSensor 2.0 and refund the recent charge of 250 USD.,REFUND,cancel_order_refund,HIGH,NEGATIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+The checkout system gave an error code PAY_ERR_301 when charging 75 EUR.,PAYMENT,card_declined,HIGH,NEGATIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+I suspect unauthorized access to my account on yesterday. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+My payment of $49.99 is showing pending for order #58291 since October 28th.,PAYMENT,update_billing,HIGH,NEGATIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+The subscription payment of $150.00 for Enterprise Gateway failed on Nov 12.,PAYMENT,invoice_query,HIGH,NEGATIVE
+how do i update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+URGENT: My payment of $99.50 is showing pending for order ORD-48291 since Nov 12.,PAYMENT,update_billing,URGENT,NEGATIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+"can wireless pro headset integrate with slack, microsoft teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+SSL certificate handshake failed for our custom domain endpoint on Nov 10.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Can you please check the status of my refund for Cloud Backup Pro? Reference ch_3M4K281.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+My order ORD-48291 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+i cannot log into my account. the password reset email is never sent to my email address.,ACCOUNT,password_reset,HIGH,NEGATIVE
+"Tracking code says order #58291 was delivered on yesterday, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+the subscription payment of $450.00 for wireless pro headset failed on nov 10.,PAYMENT,invoice_query,URGENT,NEGATIVE
+Random inquiry regarding your privacy policy terms and compliance certifications.,OTHER,spam_unknown,LOW,POSITIVE
+Has order ORD-89210 shipped yet? It was placed on 2026-11-04.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+Payment failed during checkout for Security Suite Pro with transaction ID ch_3M4K281.,PAYMENT,payment_failed,HIGH,NEGATIVE
+I need to change the shipping address for order ORD-10928 before it dispatches.,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+My bank confirmed payment was deducted for $99.50 but order ORD-77312 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+where can i find the official api documentation and code samples for smarthub x1?,PRODUCT,user_guide,LOW,NEUTRAL
+can you please check the status of my refund for smarthub x1? reference ref#88219.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+My session keeps expiring every two minutes while using the platform.,ACCOUNT,update_profile,HIGH,NEGATIVE
+Does OmniSensor 2.0 support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+"Customer support approved my refund on last Friday under ref ref#4412, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+SSL certificate handshake failed for our custom domain endpoint on Nov 10.,TECHNICAL,bug_report,HIGH,NEGATIVE
+what are the hardware system requirements and memory footprint for security suite pro?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I suspect unauthorized access to my account on last Friday. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+Customs is holding my package with tracking number ORD-89210. What documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+URGENT: I noticed a double charge of €120.00 on my credit card on October 28th with reference ch_9X2L891.,PAYMENT,double_charge,URGENT,NEGATIVE
+URGENT: Customs is holding my package with tracking number #58291. What documents are needed?,DELIVERY,wrong_address,HIGH,NEGATIVE
+I cancelled order #77312 on 3 days ago and have not received my €120.00 refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+Why was I billed 250 USD without authorization? Transaction ID is ref#4412.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+My order #10928 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+what are the hardware system requirements and memory footprint for wireless pro headset?,PRODUCT,compatibility_query,LOW,NEUTRAL
+our webhook integration stopped receiving events on yesterday. error code e_conn_reset.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+The product Enterprise Gateway does not match the description. Please issue a refund to my account.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+My bank confirmed payment was deducted for $150.00 but order #10928 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+websocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+"tracking code says order ord-10928 was delivered on nov 12, but i received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+we would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+can someone from sales call me back to discuss annual enterprise licensing?,OTHER,feedback,LOW,POSITIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+the package for order ord-77312 arrived damaged and torn on today.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Why was I billed 250 USD without authorization? Transaction ID is ref#88219.,PAYMENT,payment_failed,HIGH,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+"Tracking code says order ORD-48291 was delivered on October 28th, but I received nothing.",DELIVERY,missing_package,MEDIUM,NEGATIVE
+Bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+My account has been locked after entering the wrong password three times on 2026-11-04.,ACCOUNT,account_locked,HIGH,NEGATIVE
+Is SmartHub X1 compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+"Customer support approved my refund on 3 days ago under ref ch_3M4K281, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+"Customer support approved my refund on Nov 12 under ref TXN-90214, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+What are the hardware system requirements and memory footprint for OmniSensor 2.0?,PRODUCT,compatibility_query,LOW,NEUTRAL
+i need to update my billing card before the automatic renewal of 250 usd on nov 12.,PAYMENT,double_charge,HIGH,NEGATIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+Receiving HTTP 500 Internal Server Error when calling the /api/v1/tickets endpoint.,TECHNICAL,api_error,HIGH,NEGATIVE
+"Can OmniSensor 2.0 integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+The package for order ORD-48291 arrived damaged and torn on Nov 12.,DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Has order #58291 shipped yet? It was placed on Nov 12.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+"customer support approved my refund on last friday under ref txn-90214, but no funds received.",REFUND,dispute_charge,MEDIUM,NEGATIVE
+my bank confirmed payment was deducted for €35.50 but order ord-89210 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+URGENT: Where is your corporate headquarters located?,OTHER,feedback,HIGH,POSITIVE
+the application crashes with an unhandled exception when uploading files larger than 10mb.,TECHNICAL,bug_report,HIGH,NEGATIVE
+Is your office open on public holidays and weekends?,OTHER,spam_unknown,LOW,POSITIVE
+I am getting an 'invalid credentials' error even though I just reset my password.,ACCOUNT,password_reset,HIGH,NEGATIVE
+My order ORD-89210 was shipped to the wrong postal code. Please reroute immediately.,DELIVERY,damaged_shipment,HIGH,NEGATIVE
+i have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+Is SmartHub X1 compatible with Docker Desktop and Kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+I need to update my billing card before the automatic renewal of €35.50 on yesterday.,PAYMENT,double_charge,HIGH,NEGATIVE
+I need to update my billing card before the automatic renewal of $49.99 on today.,PAYMENT,double_charge,HIGH,NEGATIVE
+"My delivery for Security Suite Pro was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+Database queries are timing out with 504 Gateway Timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+URGENT: Customs is holding my package with tracking number ORD-33412. What documents are needed?,DELIVERY,wrong_address,HIGH,NEGATIVE
+URGENT: Can you give me an estimated delivery date for order ORD-10928 containing Wireless Pro Headset?,DELIVERY,track_shipment,HIGH,NEGATIVE
+my bank confirmed payment was deducted for €35.50 but order ord-89210 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+where is my package for order #77312? tracking has not updated since 2026-11-04.,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+Has order ORD-48291 shipped yet? It was placed on last Friday.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+how many concurrent users are supported on a single instance of wireless pro headset?,PRODUCT,compatibility_query,LOW,NEUTRAL
+I returned Enterprise Gateway on Nov 12. When will the refund of 75 EUR be credited?,REFUND,check_refund_status,MEDIUM,NEGATIVE
+What is the difference in features between the Starter and Enterprise tiers of Cloud Backup Pro?,PRODUCT,product_specification,LOW,NEUTRAL
+i noticed a double charge of €120.00 on my credit card on yesterday with reference ref#88219.,PAYMENT,double_charge,HIGH,NEGATIVE
+Please cancel my subscription for Enterprise Gateway and refund the recent charge of €120.00.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+is omnisensor 2.0 compatible with docker desktop and kubernetes clusters?,PRODUCT,feature_request,LOW,NEUTRAL
+database queries are timing out with 504 gateway timeout during batch exports.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Has order ORD-77312 shipped yet? It was placed on Nov 12.,DELIVERY,missing_package,MEDIUM,NEGATIVE
+"My delivery for SmartHub X1 was supposed to arrive yesterday, but it is delayed.",DELIVERY,delivery_delay,MEDIUM,NEGATIVE
+I need to update my billing card before the automatic renewal of €35.50 on Nov 10.,PAYMENT,double_charge,HIGH,NEGATIVE
+How do I update my registered email and phone number on my profile?,ACCOUNT,update_profile,HIGH,NEGATIVE
+I suspect unauthorized access to my account on October 28th. Please secure it immediately.,ACCOUNT,delete_account,URGENT,NEGATIVE
+does enterprise gateway support postgresql version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+I cancelled order ORD-10928 on October 28th and have not received my 75 EUR refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+Please transfer this inquiry to a human agent.,OTHER,general_inquiry,LOW,POSITIVE
+I want a full refund of 250 USD for order ORD-33412 which arrived broken.,REFUND,request_refund,MEDIUM,NEGATIVE
+Does Cloud Backup Pro support PostgreSQL version 16 and multi-region replication?,PRODUCT,product_specification,LOW,NEUTRAL
+Please delete my account and purge all personal data associated with my profile.,ACCOUNT,account_locked,HIGH,NEGATIVE
+My payment of $99.50 is showing pending for order #77312 since Nov 10.,PAYMENT,update_billing,HIGH,NEGATIVE
+Can you please check the status of my refund for Wireless Pro Headset? Reference TXN-88192.,REFUND,check_refund_status,MEDIUM,NEGATIVE
+i noticed a double charge of 75 eur on my credit card on 2026-11-04 with reference ch_9x2l891.,PAYMENT,double_charge,HIGH,NEGATIVE
+i have not received my refund of $450.00 for order ord-48291. please expedite.,REFUND,damaged_item_refund,HIGH,NEGATIVE
+Customs is holding my package with tracking number #77312. What documents are needed?,DELIVERY,wrong_address,MEDIUM,NEGATIVE
+URGENT: Please transfer this inquiry to a human agent.,OTHER,general_inquiry,HIGH,POSITIVE
+I have not received my refund of 75 EUR for order #77312. Please expedite.,REFUND,damaged_item_refund,MEDIUM,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+i am requesting a refund of 250 usd for transaction ref#88219 processed on 2026-11-04.,REFUND,dispute_charge,MEDIUM,NEGATIVE
+The SDK throws a null pointer exception when initializing client with API key.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+bug report: the pagination cursor returns duplicate records on page 3.,TECHNICAL,integration_failure,HIGH,NEGATIVE
+Does Wireless Pro Headset offer end-to-end encryption for stored customer ticket data?,PRODUCT,feature_request,LOW,NEUTRAL
+Just testing the contact form to verify message delivery.,OTHER,partnership_request,LOW,POSITIVE
+The application crashes with an unhandled exception when uploading files larger than 10MB.,TECHNICAL,bug_report,HIGH,NEGATIVE
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Getting rate limit 429 Too Many Requests even though our traffic is below 10 req/sec.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+URGENT: Where can I find the official API documentation and code samples for Cloud Backup Pro?,PRODUCT,user_guide,HIGH,NEUTRAL
+i cancelled order ord-33412 on yesterday and have not received my 75 eur refund yet.,REFUND,cancel_order_refund,MEDIUM,NEGATIVE
+I lost my phone and cannot receive the 2FA verification code to sign into my dashboard.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+"Can Enterprise Gateway integrate with Slack, Microsoft Teams, and webhook alerts?",PRODUCT,pricing_inquiry,LOW,NEUTRAL
+WebSocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+websocket connection drops repeatedly every 30 seconds with code 1006.,TECHNICAL,crash_exception,HIGH,NEGATIVE
+Can you give me an estimated delivery date for order ORD-77312 containing Enterprise Gateway?,DELIVERY,track_shipment,MEDIUM,NEGATIVE
+The courier failed to deliver Cloud Backup Pro to my address today. Order number #58291.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+Can we export reporting data to CSV or Excel directly from SmartHub X1?,PRODUCT,pricing_inquiry,LOW,NEUTRAL
+Unable to sign in using SSO / Google auth on our enterprise account.,ACCOUNT,two_factor_issue,HIGH,NEGATIVE
+The courier failed to deliver Cloud Backup Pro to my address today. Order number #10928.,DELIVERY,damaged_shipment,MEDIUM,NEGATIVE
+I have general feedback about the onboarding documentation.,OTHER,human_agent,LOW,POSITIVE
+Where is your corporate headquarters located?,OTHER,feedback,LOW,POSITIVE
+Where can I find the official API documentation and code samples for Cloud Backup Pro?,PRODUCT,user_guide,LOW,NEUTRAL
+What is the difference in features between the Starter and Enterprise tiers of OmniSensor 2.0?,PRODUCT,product_specification,LOW,NEUTRAL
+Great job on the new release! The system performance has significantly improved.,OTHER,partnership_request,LOW,POSITIVE
+CORS policy error when connecting frontend client to the API backend.,TECHNICAL,api_error,HIGH,NEGATIVE
+My bank confirmed payment was deducted for 250 USD but order ORD-89210 shows unpaid.,PAYMENT,update_billing,HIGH,NEGATIVE
+Our webhook integration stopped receiving events on 3 days ago. Error code E_CONN_RESET.,TECHNICAL,server_timeout,HIGH,NEGATIVE
+We would like to request dark mode support and custom themes in the next update.,PRODUCT,user_guide,LOW,NEUTRAL
+URGENT: Where is your corporate headquarters located?,OTHER,feedback,HIGH,POSITIVE

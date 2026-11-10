@@ -1,0 +1,270 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserRole {
+  ADMIN
+  MANAGER
+  AGENT
+  CUSTOMER
+}
+
+enum AvailabilityStatus {
+  AVAILABLE
+  BUSY
+  OFFLINE
+}
+
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  PENDING_CUSTOMER
+  RESOLVED
+  CLOSED
+}
+
+enum TicketCategory {
+  PAYMENT
+  REFUND
+  DELIVERY
+  ACCOUNT
+  TECHNICAL
+  PRODUCT
+  OTHER
+}
+
+enum RoutingStatus {
+  PENDING
+  ROUTING
+  ASSIGNED
+  FAILED
+  ESCALATED
+  MANUAL_REVIEW
+}
+
+enum AssignmentType {
+  AUTOMATED
+  MANUAL
+  REASSIGNMENT
+  ESCALATION
+}
+
+enum ActivityAction {
+  TICKET_CREATED
+  STATUS_UPDATED
+  PRIORITY_UPDATED
+  DEPARTMENT_ASSIGNED
+  AGENT_ASSIGNED
+  AGENT_REASSIGNED
+  TICKET_UPDATED
+  COMMENT_ADDED
+  NLP_ANALYSIS_COMPLETED
+  TICKET_ROUTED
+  TICKET_ESCALATED
+  ROUTING_FAILED
+  AUTO_REASSIGNED
+}
+
+model User {
+  id           String       @id @default(uuid())
+  email        String       @unique
+  passwordHash String
+  name         String
+  role         UserRole     @default(AGENT)
+  isActive     Boolean      @default(true)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  agentProfile    AgentProfile?
+  createdTickets  Ticket[]         @relation("TicketCreator")
+  assignedTickets Ticket[]         @relation("TicketAssignee")
+  comments        TicketComment[]
+  activities      TicketActivity[]
+  previousAssignments   TicketAssignmentHistory[] @relation("PreviousAgentAssignments")
+  newAssignments        TicketAssignmentHistory[] @relation("NewAgentAssignments")
+  assignedByHistories   TicketAssignmentHistory[] @relation("AssignedByHistories")
+
+  @@index([email])
+  @@index([role])
+  @@map("users")
+}
+
+model AgentProfile {
+  id                 String             @id @default(uuid())
+  userId             String             @unique
+  user               User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  departmentId       String?
+  department         Department?        @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+  skills             String[]           @default([])
+  availabilityStatus AvailabilityStatus @default(OFFLINE)
+  maxWorkload        Int                @default(5)
+  currentWorkload    Int                @default(0)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  @@index([departmentId])
+  @@index([availabilityStatus])
+  @@map("agent_profiles")
+}
+
+model Department {
+  id          String         @id @default(uuid())
+  name        String         @unique
+  description String?
+  isActive    Boolean        @default(true)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  agents      AgentProfile[]
+  tickets     Ticket[]
+
+  @@index([name])
+  @@map("departments")
+}
+
+model Ticket {
+  id              String          @id @default(uuid())
+  ticketNumber    Int             @unique @default(autoincrement())
+  title           String
+  description     String
+  priority        TicketPriority  @default(MEDIUM)
+  status          TicketStatus    @default(OPEN)
+  category        TicketCategory?
+  needsHumanReview Boolean        @default(false)
+
+  customerId      String?
+  customer        User?           @relation("TicketCreator", fields: [customerId], references: [id], onDelete: SetNull)
+  customerName    String?
+  customerEmail   String?
+
+  departmentId    String?
+  department      Department?     @relation(fields: [departmentId], references: [id], onDelete: SetNull)
+
+  assignedAgentId String?
+  assignedAgent   User?           @relation("TicketAssignee", fields: [assignedAgentId], references: [id], onDelete: SetNull)
+
+  resolvedAt      DateTime?
+  closedAt        DateTime?
+  routingStatus      RoutingStatus            @default(PENDING)
+  isManuallyAssigned Boolean                  @default(false)
+  assignedAt         DateTime?
+  escalatedAt        DateTime?
+  escalationLevel    Int                      @default(0)
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  comments           TicketComment[]
+  activities         TicketActivity[]
+  assignmentHistory  TicketAssignmentHistory[]
+  nlpAnalysis        TicketNlpAnalysis?
+  embedding          TicketEmbedding?
+
+  @@index([status])
+  @@index([priority])
+  @@index([category])
+  @@index([routingStatus])
+  @@index([needsHumanReview])
+  @@index([isManuallyAssigned])
+  @@index([departmentId])
+  @@index([assignedAgentId])
+  @@index([createdAt])
+  @@map("tickets")
+}
+
+model TicketNlpAnalysis {
+  id                 String          @id @default(uuid())
+  ticketId           String          @unique
+  ticket             Ticket          @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  category           TicketCategory
+  categoryConfidence Float
+  intent             String
+  intentConfidence   Float
+  priorityPredicted  TicketPriority
+  priorityConfidence Float
+  sentiment          String
+  sentimentScore     Float
+  urgencyDetected    Boolean         @default(false)
+  extractedEntities  Json
+  needsHumanReview   Boolean         @default(false)
+  reviewReason       String?
+  rawResponse        Json?
+  processedAt        DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  @@index([category])
+  @@index([needsHumanReview])
+  @@map("ticket_nlp_analyses")
+}
+
+model TicketComment {
+  id         String   @id @default(uuid())
+  ticketId   String
+  ticket     Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  authorId   String
+  author     User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  content    String
+  isInternal Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@index([ticketId, createdAt])
+  @@map("ticket_comments")
+}
+
+model TicketActivity {
+  id        String         @id @default(uuid())
+  ticketId  String
+  ticket    Ticket         @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  actorId   String?
+  actor     User?          @relation(fields: [actorId], references: [id], onDelete: SetNull)
+  action    ActivityAction
+  details   Json           @default("{}")
+  createdAt DateTime       @default(now())
+
+  @@index([ticketId, createdAt])
+  @@map("ticket_activities")
+}
+
+model TicketAssignmentHistory {
+  id              String         @id @default(uuid())
+  ticketId        String
+  ticket          Ticket         @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  previousAgentId String?
+  previousAgent   User?          @relation("PreviousAgentAssignments", fields: [previousAgentId], references: [id], onDelete: SetNull)
+  newAgentId      String
+  newAgent        User           @relation("NewAgentAssignments", fields: [newAgentId], references: [id], onDelete: Cascade)
+  assignedById    String?
+  assignedBy      User?          @relation("AssignedByHistories", fields: [assignedById], references: [id], onDelete: SetNull)
+  assignmentType  AssignmentType @default(AUTOMATED)
+  reason          String?
+  score           Float?
+  createdAt       DateTime       @default(now())
+
+  @@index([ticketId, createdAt])
+  @@map("ticket_assignment_history")
+}
+
+model TicketEmbedding {
+  id        String   @id @default(uuid())
+  ticketId  String   @unique
+  ticket    Ticket   @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+  vector    Float[]
+  model     String   @default("all-MiniLM-L6-v2")
+  dimension Int      @default(384)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("ticket_embeddings")
+}

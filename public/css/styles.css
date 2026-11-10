@@ -1,0 +1,139 @@
+/* Customer Support Ticket System - Custom UI Styles */
+
+:root {
+  --primary: #3b82f6;
+  --primary-hover: #2563eb;
+  --bg-main: #f8fafc;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: #1e293b;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Glassmorphism & Cards */
+.card-shadow {
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.07), 0 1px 2px -1px rgb(0 0 0 / 0.07);
+}
+
+.card-shadow-hover {
+  transition: all 0.2s ease-in-out;
+}
+.card-shadow-hover:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+}
+
+/* Status Badges */
+.badge-open {
+  background-color: #dcfce7;
+  color: #15803d;
+  border: 1px solid #bbf7d0;
+}
+.badge-in-progress {
+  background-color: #e0e7ff;
+  color: #4338ca;
+  border: 1px solid #c7d2fe;
+}
+.badge-resolved {
+  background-color: #ccfbf1;
+  color: #0f766e;
+  border: 1px solid #99f6e4;
+}
+.badge-closed {
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+/* Priority Badges */
+.badge-priority-urgent {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  font-weight: 600;
+}
+.badge-priority-high {
+  background-color: #ffedd5;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+.badge-priority-medium {
+  background-color: #fef9c3;
+  color: #a16207;
+  border: 1px solid #fef08a;
+}
+.badge-priority-low {
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #dcfce7;
+}
+
+/* Sentiment Badges */
+.badge-sentiment-positive {
+  background-color: #ecfdf5;
+  color: #047857;
+}
+.badge-sentiment-neutral {
+  background-color: #f8fafc;
+  color: #64748b;
+}
+.badge-sentiment-negative {
+  background-color: #fef2f2;
+  color: #b91c1c;
+}
+
+/* Category Badges */
+.badge-cat-payment { background-color: #eff6ff; color: #1d4ed8; }
+.badge-cat-refund { background-color: #fdf2f8; color: #be185d; }
+.badge-cat-delivery { background-color: #fffbeb; color: #b45309; }
+.badge-cat-account { background-color: #f5f3ff; color: #6d28d9; }
+.badge-cat-technical { background-color: #ecfeff; color: #0e7490; }
+.badge-cat-product { background-color: #f0fdf4; color: #15803d; }
+.badge-cat-other { background-color: #f8fafc; color: #475569; }
+
+/* Modal overlay transitions */
+.modal-overlay {
+  background-color: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+/* Pulsing online indicator */
+.pulse-online {
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
