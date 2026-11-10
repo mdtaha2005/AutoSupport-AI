@@ -972,6 +972,76 @@ async function toggleAgentAvailability(agentId, currentStatus) {
 }
 
 // ========================================================
+// Add New Team Member
+// ========================================================
+function openAddMemberModal() {
+  const modal = document.getElementById('add-member-modal');
+  if (!modal) return;
+
+  // Populate department options
+  const deptSelect = document.getElementById('member-dept-select');
+  if (deptSelect) {
+    deptSelect.innerHTML = '<option value="">Select Department...</option>' +
+      state.departments.map(d => `<option value="${d.id}">${escapeHtml(d.name)}</option>`).join('');
+  }
+
+  modal.classList.remove('hidden');
+}
+
+function closeAddMemberModal() {
+  const modal = document.getElementById('add-member-modal');
+  if (modal) modal.classList.add('hidden');
+}
+
+async function submitAddMember() {
+  const submitBtn = document.getElementById('btn-save-member');
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '<span>Creating...</span>';
+
+  const name = document.getElementById('member-name').value.trim();
+  const email = document.getElementById('member-email').value.trim();
+  const password = document.getElementById('member-password').value;
+  const role = document.getElementById('member-role').value;
+  const departmentId = document.getElementById('member-dept-select').value || undefined;
+  const maxWorkload = parseInt(document.getElementById('member-max-workload').value, 10) || 5;
+  const skillsStr = document.getElementById('member-skills').value;
+  const skills = skillsStr
+    ? skillsStr.split(',').map(s => s.trim()).filter(Boolean)
+    : [];
+
+  try {
+    const res = await apiFetch('/auth/register', {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        email,
+        password,
+        role,
+        departmentId,
+        skills,
+        maxWorkload,
+      }),
+    });
+
+    showToast(`Team member "${name}" successfully created as ${role}!`, 'success');
+    closeAddMemberModal();
+
+    // Reset inputs
+    document.getElementById('member-name').value = '';
+    document.getElementById('member-email').value = '';
+    document.getElementById('member-skills').value = '';
+
+    // Reload agents grid
+    loadAgents();
+  } catch (err) {
+    showToast(`Failed to add team member: ${err.message}`, 'error');
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = '<span>Create Team Member</span>';
+  }
+}
+
+// ========================================================
 // Operational Analytics (Phase 4)
 // ========================================================
 async function loadAnalytics() {
