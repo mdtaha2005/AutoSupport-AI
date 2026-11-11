@@ -239,6 +239,14 @@ router.post(
   ticketController.assignTicket.bind(ticketController) as never
 );
 
+router.patch(
+  '/:id/assign',
+  authenticate as never,
+  authorizeRoles(UserRole.ADMIN, UserRole.MANAGER),
+  validateRequest({ params: ticketIdParamSchema, body: assignTicketSchema }),
+  ticketController.assignTicket.bind(ticketController) as never
+);
+
 /**
  * @openapi
  * /tickets/{id}/analyze:

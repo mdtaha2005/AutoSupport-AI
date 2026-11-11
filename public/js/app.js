@@ -1,6 +1,6 @@
 /**
- * AutoSupport AI - Interactive Frontend Controller
- * Complete UI for Tickets, Live NLP Evaluation, Routing, Search & Analytics
+ * AutoSupport AI - Frontend Application Controller
+ * Unified SaaS Platform for Tickets, AI Classification, Routing, Search & Analytics
  */
 
 // Application State
@@ -114,7 +114,7 @@ async function initAuth() {
     }
   }
 
-  // Automatic default login as Manager for frictionless testing
+  // Initialize default active session as Manager
   try {
     await quickLogin('manager@ticketrouting.com', 'ManagerPass123!', false, false);
   } catch {
@@ -312,7 +312,7 @@ function renderTicketResults(searchRes) {
       <div class="text-center py-16 bg-white rounded-xl border border-slate-200 p-6">
         <span class="text-3xl block mb-2">🔍</span>
         <h4 class="font-bold text-slate-800 text-sm">No tickets matched your query</h4>
-        <p class="text-xs text-slate-500 mt-1">Try clearing some faceted filters or switching between Hybrid, Lexical, and Semantic search.</p>
+        <p class="text-xs text-slate-500 mt-1">Try clearing active filters or switching between Hybrid, Keyword, and Semantic search.</p>
         <button onclick="resetFiltersAndSearch()" class="mt-4 px-4 py-1.5 bg-blue-50 text-blue-600 hover:bg-blue-100 rounded-lg text-xs font-semibold">
           Reset All Filters
         </button>
@@ -334,7 +334,7 @@ function renderTicketResults(searchRes) {
 
     const hybridScore = t.scores?.hybridScore ?? t.score;
     const scoreBadge = (hybridScore !== undefined && hybridScore !== null && state.search.query) ? `
-      <span class="text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full font-bold ml-auto" title="Hybrid Relevance Score">
+      <span class="text-[11px] font-mono bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full font-bold ml-auto" title="Relevance Score">
         Score: ${(hybridScore * 100).toFixed(0)}%
       </span>
     ` : '';
@@ -559,7 +559,7 @@ async function openTicketModal(ticketId) {
     // Status Select Option
     document.getElementById('modal-status-select').value = status;
 
-    // Phase 2: NLP Analysis Data
+    // AI Intelligence & Classification Data
     const nlpCatEl = document.getElementById('modal-nlp-cat');
     const nlpIntentEl = document.getElementById('modal-nlp-intent');
     const nlpConfEl = document.getElementById('modal-nlp-conf');
@@ -644,7 +644,7 @@ async function reassignTicketAgent() {
 
   try {
     await apiFetch(`/tickets/${state.selectedTicket.id}/assign`, {
-      method: 'PATCH',
+      method: 'POST',
       body: JSON.stringify({ agentId, reason: 'Manual reassignment from web UI' }),
     });
 
@@ -733,9 +733,9 @@ function renderModalActivities(activities) {
 }
 
 // ========================================================
-// New Ticket Creation & Live NLP Playground
+// New Ticket Creation & AI Triage
 // ========================================================
-const sampleTestCases = {
+const sampleInquiryTemplates = {
   payment: {
     title: 'Double charged on Visa card for invoice #INV-4921',
     desc: 'I checked my online banking statement and saw two transactions of $129.00 on yesterday for invoice #INV-4921. Please refund the duplicate charge immediately.',
@@ -753,14 +753,15 @@ const sampleTestCases = {
     desc: 'My package with tracking code TRK-99021 has been stuck at the regional distribution center for 4 days past the guaranteed delivery date. Where is my shipment?',
   },
 };
+const sampleTestCases = sampleInquiryTemplates;
 
 function fillTestCase(type) {
-  const scenario = sampleTestCases[type];
+  const scenario = sampleInquiryTemplates[type];
   if (!scenario) return;
 
   document.getElementById('create-title').value = scenario.title;
   document.getElementById('create-desc').value = scenario.desc;
-  showToast(`Loaded ${type.toUpperCase()} test case scenario`, 'info');
+  showToast(`Loaded ${type.toUpperCase()} template`, 'info');
 }
 
 async function previewNlpLive() {
@@ -858,12 +859,12 @@ async function submitCreateTicket() {
     showToast(`Failed to create ticket: ${err.message}`, 'error');
   } finally {
     submitBtn.disabled = false;
-    submitBtn.innerHTML = '<span>🚀 Submit & Route Ticket</span>';
+    submitBtn.innerHTML = '<span>Submit & Route Ticket</span>';
   }
 }
 
 // ========================================================
-// Agents & Workload Balancing (Phase 3)
+// Agents & Workload Balancing
 // ========================================================
 async function loadDepartments() {
   try {
@@ -1042,7 +1043,7 @@ async function submitAddMember() {
 }
 
 // ========================================================
-// Operational Analytics (Phase 4)
+// Support Operations Analytics
 // ========================================================
 async function loadAnalytics() {
   try {
